@@ -11,8 +11,8 @@
 TODO_DIR="."
 
 DATE=$(date "+%b %d")
-filename="$TODO_DIR/$(date "+%d-%m")-todo.md"
-yesterday_filename="$TODO_DIR/$(date -v -1d "+%d-%m")-todo.md"
+filename="$TODO_DIR/$(date "+%y-%m-%d")-todo.md"
+yesterday_filename="$TODO_DIR/$(date -v -1d "+%y-%m-%d")-todo.md"
 
 generate_commit_message() {
     local diff=$(git diff --cached)
@@ -33,8 +33,6 @@ generate_commit_message() {
     if [ "$message" == "$DATE:" ]; then
         message="$DATE: Updated todo lists"
     fi
-    
-    echo "$message"
 }
 
 main() {
