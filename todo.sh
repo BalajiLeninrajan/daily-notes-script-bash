@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Instructions:
-# - Files are named DD-MM-todo.md
+# - Files are named YY-MM-DD-todo.md
 # - First line is "# MMM DD TODO" (e.g. "# Feb 03 TODO")
 # - Sections are marked with ## (e.g. "## Work")
 # - Tasks are marked with [ ] or [x] (e.g. "- [ ] task" or "- [x] completed task") 
@@ -33,6 +33,8 @@ generate_commit_message() {
     if [ "$message" == "$DATE:" ]; then
         message="$DATE: Updated todo lists"
     fi
+
+    echo "$message"
 }
 
 main() {
