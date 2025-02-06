@@ -43,6 +43,8 @@ main() {
         exit 1
     fi
 
+    git pull
+
     if [ ! -f "$filename" ]; then
         cp "$yesterday_filename" "$filename"
 
